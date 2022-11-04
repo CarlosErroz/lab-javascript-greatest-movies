@@ -3,7 +3,7 @@
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 function getAllDirectors(moviesArray) {
     const newArray = moviesArray.map(movie => movie.director);
-    return(newArray);
+    return newArray;
 }
 
 
@@ -12,11 +12,18 @@ function howManyMovies(moviesArray) {
     const newArray = moviesArray.filter(movie => {
         return(movie.director==="Steven Spielberg" && movie.genre.includes("Drama"))
     })
-    return(newArray.length)
+    return newArray.length
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage(moviesArray) {}
+function scoresAverage(moviesArray) {
+    if (!moviesArray.length) {return(0)}
+    const newArray = moviesArray.reduce((result, value) => {
+        return result+value.score;
+    },0)
+    let average = (newArray / moviesArray.length).toFixed(2);
+    return Number(average)
+}
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 function dramaMoviesScore(moviesArray) {}

@@ -2003,7 +2003,10 @@ const movies = [
   ];
 
 
-const newArray = movies.filter(movie => {
-    return(movie.director==="Steven Spielberg" && movie.genre.includes("Drama"))
-})
-console.log(newArray.length)
+const newArray = movies.reduce((result, value) => {
+    return result+value.score;
+},0)
+
+let average = (newArray / movies.length).toFixed(2);
+
+console.log(Number(average));
