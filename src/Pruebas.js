@@ -2003,10 +2003,18 @@ const movies = [
   ];
 
 
-const newArray = movies.reduce((result, value) => {
-    return result+value.score;
-},0)
+const newArray = [... movies]
+newArray.sort((a,b) => {
+  return a.year - b.year;
+})
+newArray.sort ((a,b) => {
+  if (a.title < b.title) {
+      return -1;
+  }
+  if (a.title > b.title) {
+      return 1;
+  }
+  return 0;
+})
 
-let average = (newArray / movies.length).toFixed(2);
-
-console.log(Number(average));
+console.log(newArray);
