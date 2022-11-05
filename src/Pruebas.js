@@ -2002,19 +2002,22 @@ const movies = [
     }
   ];
 
-
 const newArray = [... movies]
-newArray.sort((a,b) => {
-  return a.year - b.year;
-})
-newArray.sort ((a,b) => {
-  if (a.title < b.title) {
-      return -1;
-  }
-  if (a.title > b.title) {
-      return 1;
-  }
-  return 0;
-})
+const newArrayTitles = newArray.map(movie => movie.title);
+console
+const newArrayTitles2 = Object.values(newArrayTitles)
+console.log (typeof newArrayTitles2)
 
-console.log(newArray);
+
+/*
+if (newArrayTitles.length<20) {
+  return newArrayTitles
+} else {
+  const newArrayTitles2 = [];
+  for (let i=0; i<20;i++) {
+      newArrayTitles2.push(newArrayTitles[i])
+  }
+  console.log(newArrayTitles2)
+}
+*/
+
